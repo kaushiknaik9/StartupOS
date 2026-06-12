@@ -1,0 +1,36 @@
+{
+  "name": "startupos",
+  "version": "1.0.0",
+  "description": "This is my MINI ZOHO app Backend not for Portfolio But for my real Startup Maybe in Future",
+  "keywords": [
+    "Backend",
+    "1week",
+    "myzoho"
+  ],
+  "homepage": "https://github.com/kaushiknaik9/StartupOS#readme",
+  "bugs": {
+    "url": "https://github.com/kaushiknaik9/StartupOS/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaushiknaik9/StartupOS.git"
+  },
+  "license": "ISC",
+  "author": "Kaushik Naik",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "helmet": "^8.2.0",
+    "morgan": "^1.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
