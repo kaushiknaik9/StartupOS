@@ -1,5 +1,3 @@
-const validate = require("../middleware/validate.middleware");
-
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema(
@@ -16,6 +14,11 @@ const UserSchema = new mongoose.Schema(
       lowercase: true,
       trim: true,
       minlength: 10,
+    },
+    password: {
+      type: String,
+      required: true,
+      minlength: 6,
     },
   },
   {
