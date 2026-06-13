@@ -1,3 +1,5 @@
+const validate = require("../middleware/validate.middleware");
+
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema(

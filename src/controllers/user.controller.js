@@ -1,3 +1,4 @@
+const ApiError = require("../utils/ApiError");
 const User = require("../models/User");
 
 const getallUser = async (req, res) => {
@@ -36,10 +37,7 @@ const getuser = async (req, res) => {
     const user = await User.findById(id);
 
     if (!user) {
-      return res.status(404).json({
-        success: false,
-        message: "User Not Found !!",
-      });
+      throw new ApiError(404, "User not Found");
     }
     return res.status(200).json({
       success: true,
@@ -78,10 +76,7 @@ const updateUser = async (req, res) => {
       runValidators: true,
     });
     if (!user) {
-      return res.status(404).json({
-        success: true,
-        message: "User not found",
-      });
+      throw new ApiError(404, "User Not Found");
     }
     return res.status(201).json({
       success: true,
@@ -101,10 +96,7 @@ const DeleteUser = async (req, res) => {
     const user = await User.findByIdAndDelete(id);
 
     if (!user) {
-      return res.status(404).json({
-        success: false,
-        messaage: "User Not Found !!",
-      });
+      throw new ApiError(404, "User Not Found");
     }
     return res.status(200).json({
       success: true,

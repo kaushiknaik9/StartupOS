@@ -1,3 +1,9 @@
+const {
+  CreateUserValidator,
+  UpdateUserValidator,
+} = require("../validators/user.validator");
+const validate = require("../middleware/validate.middleware");
+
 const express = require("express");
 
 const {
@@ -12,8 +18,8 @@ const router = express.Router();
 
 router.get("/", getallUser);
 router.get("/:id", getuser);
-router.post("/", createUser);
-router.patch("/:id", updateUser);
+router.post("/", CreateUserValidator, validate, createUser);
+router.patch("/:id", UpdateUserValidator, validate, updateUser);
 router.delete("/:id", DeleteUser);
 
 module.exports = router;
