@@ -1,10 +1,17 @@
 const express = require("express");
 
-const { createUser } = require("../controllers/user.controller");
-const { crossOriginResourcePolicy } = require("helmet");
+const {
+  getallUser,
+  getuser,
+  createUser,
+  DeleteUser,
+} = require("../controllers/user.controller");
 
 const router = express.Router();
 
+router.get("/", getallUser);
+router.get("/:id", getuser);
 router.post("/", createUser);
+router.delete("/:id", DeleteUser);
 
 module.exports = router;
